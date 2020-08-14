@@ -1,4 +1,4 @@
-ROM ubuntu:20.04
+FROM ubuntu:20.04
 
 # prevent tzdata from stalling
 ARG DEBIAN_FRONTEND=noninteractive
@@ -39,7 +39,6 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER docker
 
-# this is where I was running into problems with the other approaches
 RUN sudo apt-get update
 
 # taken from https://www.dedunu.info/2020/06/10/ubuntu-20-04-build-coreutils-from-the-source
